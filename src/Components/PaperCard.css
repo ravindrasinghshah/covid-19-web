@@ -1,0 +1,45 @@
+.paper_card {
+    padding: 10px;
+    color  : white;
+}
+
+/* .paper_card >h3 {
+    font-weight: 300;
+    color: black;
+} */
+
+.paper_card_title {
+    align-items: center;
+    font-size  : 12px;
+    padding    : 5px;
+}
+
+.paper_card_title>h1 {
+    display    : flex;
+    font-size  : 40px;
+    font-weight: 400;
+}
+
+.paper_card_title>h3 {
+    display     : flex;
+    color       : hsla(0, 0%, 100%, .5) !important;
+    font-size   : 20px;
+    font-weight : 300;
+    padding-left: 2px;
+}
+
+.paper_card_title_icon {
+    padding-top: 15px;
+    font-size  : 35px !important;
+    color      : whitesmoke;
+    opacity    : 0.4;
+}
+
+.paper_card_body {
+    display        : flex;
+    justify-content: flex-end;
+    font-size      : 18px;
+    font-weight    : 200;
+    padding-top    : 10px;
+    width          : auto;
+}

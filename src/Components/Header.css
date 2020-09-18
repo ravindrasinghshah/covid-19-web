@@ -1,0 +1,11 @@
+.header_title.MuiTypography-h5{
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.header > .MuiAppBar-colorPrimary{
+    background-color: #3d4977;
+}
