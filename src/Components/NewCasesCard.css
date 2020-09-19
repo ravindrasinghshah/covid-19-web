@@ -1,0 +1,37 @@
+.newcase_card {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.newcase_card>div {
+    padding   : 20px;
+    text-align: center;
+}
+
+.newcase_card_icon {
+    flex       : 0.2;
+    margin-left: auto;
+}
+
+.newcase_card_icon>.MuiSvgIcon-root {
+    font-size  : 80px;
+    font-weight: 100;
+    color      : #7a7b97 !important;
+    opacity    : 0.3;
+}
+
+.newcase_card_text {
+    flex       : 0.3;
+    border-left: 1px solid #E4E5EB;
+}
+
+.newcase_card_text>h1 {
+    font-weight: 300;
+}
+
+.newcase_card_text>p {
+    color      : gray;
+    font-weight: 200;
+    padding-top: 2px;
+}

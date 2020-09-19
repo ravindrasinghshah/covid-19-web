@@ -15,27 +15,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 function PaperCard({ title, count, Icon, paperClass }) {
   const classes = useStyles();
-  const formattingFn = (counts) => {
-    return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+
   return (
     <div className={classes.root}>
       <Paper className={paperClass}>
         <div className={`paper_card`}>
           <div className="paper_card_title">
-            {/* {Icon && <Icon className={`paper_card_title_icon`} />}  */}
             <h1>
-              {/* {count && count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} */}
-              {count && <CountUp end={count}
-                // onEnd={() => count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              />}
+              {count &&
+                <CountUp end={count} separator="," />}
             </h1>
             <h3> {title}</h3>
+            <div>
+            </div>
           </div>
           <div className="paper_card_body">
-            {/**Chart */}
             <Icon className="paper_card_title_icon" />
           </div>
         </div>
