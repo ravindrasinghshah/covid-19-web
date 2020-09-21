@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(3),
       width: theme.spacing(40),
-      height: theme.spacing(20),
+      height: theme.spacing(19),
     },
   },
 }));

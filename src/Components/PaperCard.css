@@ -40,6 +40,12 @@
     justify-content: flex-end;
     font-size      : 18px;
     font-weight    : 200;
-    padding-top    : 10px;
     width          : auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .app_banner_cards {
+        flex-flow: row wrap;
+    }
+    
 }

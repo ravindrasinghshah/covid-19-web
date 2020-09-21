@@ -12,9 +12,10 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         justifyContent: 'center',
         '& > *': {
-            margin: theme.spacing(3),
+            // margin: theme.spacing(3),
             width: 'inherit',
-            height: theme.spacing(15),
+            height: 'inherit',
+            // height: theme.spacing(10.5),
         },
     },
 }));

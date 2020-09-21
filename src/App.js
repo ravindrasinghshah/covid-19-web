@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import PaperCard from './Components/PaperCard';
 import NewCasesCard from './Components/NewCasesCard';
-
+import SummaryChart from './Components/SummaryChart';
 import ErrorIcon from '@material-ui/icons/Error';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -16,16 +16,26 @@ class App extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      store: {
+        summary: {
+          global: [],
+          countries: []
+        }
+      }
     };
   }
 
   componentDidMount() {
     covidService.getGlobalResult().then(response => {
-      console.log(response);
       this.setState({
         isLoaded: true,
-        items: response.Global
+        store: {
+          summary: {
+            global: response.Global,
+            countries: response.Countries
+          }
+        }
       });
     });
   }
@@ -33,27 +43,31 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header />
-        <div className="app_banner">
+        {this.state.isLoaded ? (<div className="app_banner">
           <div className="app_banner_cards">
-            <PaperCard title="Total Confirmed" count={this.state.items.TotalConfirmed} Icon={ErrorIcon} paperClass="confirm_cases" />
-            <PaperCard title="Total Recovered" count={this.state.items.TotalRecovered} Icon={ThumbUpIcon} paperClass="recover_cases" />
-            <PaperCard title="Total Deaths" count={this.state.items.TotalDeaths} Icon={ThumbDownIcon} paperClass="death_cases" />
+            <PaperCard title="Total Confirmed" count={this.state.store.summary.global.TotalConfirmed}
+              Icon={ErrorIcon} paperClass="confirm_cases" />
+            <PaperCard title="Total Recovered" count={this.state.store.summary.global.TotalRecovered}
+              Icon={ThumbUpIcon} paperClass="recover_cases" />
+            <PaperCard title="Total Deaths" count={this.state.store.summary.global.TotalDeaths}
+              Icon={ThumbDownIcon} paperClass="death_cases" />
 
           </div>
           <div className="app_banner_cards">
-            <NewCasesCard confirmedCount={this.state.items.NewConfirmed}
-              recoveredCount={this.state.items.NewRecovered} deathCount={this.state.items.NewDeaths} />
+            <NewCasesCard
+              confirmedCount={this.state.store.summary.global.NewConfirmed}
+              recoveredCount={this.state.store.summary.global.NewRecovered}
+              deathCount={this.state.store.summary.global.NewDeaths} />
           </div>
-          {/* Banner Component
-            - total counts 
-            - search bar
-            */}
-          {
-            /* Top cases Component
-             - top cases tile
-             */
-          }
-        </div>
+          <div className="app_summary_chart">
+            {this.state.store.summary.countries &&
+              this.state.store.summary.countries.length > 0
+              && <SummaryChart countries={this.state.store.summary.countries} />}
+          </div>
+        </div>)
+          : <h1>Loading...</h1>
+        }
+
       </div>
     )
   }

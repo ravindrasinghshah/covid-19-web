@@ -1,0 +1,20 @@
+.summaryChart {
+    /* display: flex; */
+    justify-content: center;
+    /* padding        : 10px; */
+    /* border: 1px solid #ccc;
+    width:400px;
+    height: 320px;
+    margin: 20px;
+   border-radius: 5px; */
+}
+
+.MuiPaper-root>h5 {
+    text-align: center;
+    font-weight   : 300;
+    padding-bottom: 15px;
+}
+.summary_chart_tooltip
+{
+    margin:10px;
+}

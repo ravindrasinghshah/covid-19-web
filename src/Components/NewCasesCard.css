@@ -5,7 +5,7 @@
 }
 
 .newcase_card>div {
-    padding   : 20px;
+    /* padding   : 20px; */
     text-align: center;
 }
 
@@ -34,4 +34,22 @@
     color      : gray;
     font-weight: 200;
     padding-top: 2px;
+}
+
+@media only screen and (max-width: 900px) {
+    .newcase_card_icon {
+        margin: auto;
+    }
+    .newcase_card{
+        flex-flow: column;
+    }
+    .newcase_card_text{
+        border:none;
+    }
+    .newcase_card>div{
+        padding: 10px;
+    }
+    .newcase_card_icon>.MuiSvgIcon-root{
+        font-size: 60px;
+    }
 }
