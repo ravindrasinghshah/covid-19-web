@@ -3,6 +3,7 @@ import './PaperCard.css';
 import { makeStyles } from '@material-ui/core/styles';
 import CountUp from 'react-countup';
 import Paper from '@material-ui/core/Paper';
+import PublicIcon from '@material-ui/icons/Public';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -28,7 +29,7 @@ function PaperCard({ title, count, Icon, paperClass }) {
               {count &&
                 <CountUp end={count} separator="," />}
             </h1>
-            <h3> {title}</h3>
+            <h3> <PublicIcon /> {title}</h3>
             <div>
             </div>
           </div>

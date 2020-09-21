@@ -3,10 +3,9 @@ import './App.css';
 import PaperCard from './Components/PaperCard';
 import NewCasesCard from './Components/NewCasesCard';
 import SummaryChart from './Components/SummaryChart';
-import ErrorIcon from '@material-ui/icons/Error';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { covidService } from './Services/Service';
 import Header from './Components/Header';
 
@@ -45,12 +44,12 @@ class App extends React.Component {
         <Header />
         {this.state.isLoaded ? (<div className="app_banner">
           <div className="app_banner_cards">
-            <PaperCard title="Total Confirmed" count={this.state.store.summary.global.TotalConfirmed}
-              Icon={ErrorIcon} paperClass="confirm_cases" />
-            <PaperCard title="Total Recovered" count={this.state.store.summary.global.TotalRecovered}
-              Icon={ThumbUpIcon} paperClass="recover_cases" />
-            <PaperCard title="Total Deaths" count={this.state.store.summary.global.TotalDeaths}
-              Icon={ThumbDownIcon} paperClass="death_cases" />
+            <PaperCard title="Confirmed" count={this.state.store.summary.global.TotalConfirmed}
+              Icon={SentimentDissatisfiedIcon} paperClass="confirm_cases" />
+            <PaperCard title="Recovered" count={this.state.store.summary.global.TotalRecovered}
+              Icon={InsertEmoticonIcon} paperClass="recover_cases" />
+            <PaperCard title="Deaths" count={this.state.store.summary.global.TotalDeaths}
+              Icon={SentimentVeryDissatisfiedIcon} paperClass="death_cases" />
 
           </div>
           <div className="app_banner_cards">

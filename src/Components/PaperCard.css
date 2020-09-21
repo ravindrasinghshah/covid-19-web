@@ -27,7 +27,9 @@
     font-weight : 300;
     padding-left: 2px;
 }
-
+.paper_card_title>h3 >.MuiSvgIcon-root{
+margin-right: 5px;
+}
 .paper_card_title_icon {
     padding-top: 15px;
     font-size  : 35px !important;
