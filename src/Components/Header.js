@@ -25,9 +25,14 @@ function Header() {
         <div className="header">
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h5" className='header_title'>
+                    <Typography variant="h6" className='header_title'>
                         COVID-19 Dashboard
                     </Typography>
+                    {
+                        /**
+                         * QR Code - open in mobile
+                         */
+                    }
                 </Toolbar>
             </AppBar>
         </div>

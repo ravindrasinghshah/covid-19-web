@@ -3,11 +3,13 @@ import './App.css';
 import PaperCard from './Components/PaperCard';
 import NewCasesCard from './Components/NewCasesCard';
 import SummaryChart from './Components/SummaryChart';
+import DataNotFound from './Components/DataNotFound';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { covidService } from './Services/Service';
 import Header from './Components/Header';
+import AppLoading from './Components/AppLoading';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +29,7 @@ class App extends React.Component {
 
   componentDidMount() {
     covidService.getGlobalResult().then(response => {
+      // console.log(response)
       this.setState({
         isLoaded: true,
         store: {
@@ -42,29 +45,33 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header />
-        {this.state.isLoaded ? (<div className="app_banner">
-          <div className="app_banner_cards">
-            <PaperCard title="Confirmed" count={this.state.store.summary.global.TotalConfirmed}
-              Icon={SentimentDissatisfiedIcon} paperClass="confirm_cases" />
-            <PaperCard title="Recovered" count={this.state.store.summary.global.TotalRecovered}
-              Icon={InsertEmoticonIcon} paperClass="recover_cases" />
-            <PaperCard title="Deaths" count={this.state.store.summary.global.TotalDeaths}
-              Icon={SentimentVeryDissatisfiedIcon} paperClass="death_cases" />
+        {this.state.isLoaded ?
+          this.state.store.summary.global.TotalConfirmed > 0 ?
+            (<div className="app_banner">
+              <div className="app_banner_cards">
+                <PaperCard title="Confirmed" count={this.state.store.summary.global.TotalConfirmed}
+                  Icon={SentimentDissatisfiedIcon} paperClass="confirm_cases" />
+                <PaperCard title="Recovered" count={this.state.store.summary.global.TotalRecovered}
+                  Icon={InsertEmoticonIcon} paperClass="recover_cases" />
+                <PaperCard title="Deaths" count={this.state.store.summary.global.TotalDeaths}
+                  Icon={SentimentVeryDissatisfiedIcon} paperClass="death_cases" />
 
-          </div>
-          <div className="app_banner_cards">
-            <NewCasesCard
-              confirmedCount={this.state.store.summary.global.NewConfirmed}
-              recoveredCount={this.state.store.summary.global.NewRecovered}
-              deathCount={this.state.store.summary.global.NewDeaths} />
-          </div>
-          <div className="app_summary_chart">
-            {this.state.store.summary.countries &&
-              this.state.store.summary.countries.length > 0
-              && <SummaryChart countries={this.state.store.summary.countries} />}
-          </div>
-        </div>)
-          : <h1>Loading...</h1>
+              </div>
+              <div className="app_banner_cards">
+                <NewCasesCard
+                  confirmedCount={this.state.store.summary.global.NewConfirmed}
+                  recoveredCount={this.state.store.summary.global.NewRecovered}
+                  deathCount={this.state.store.summary.global.NewDeaths} />
+              </div>
+              <div className="app_summary_chart">
+                {this.state.store.summary.countries &&
+                  this.state.store.summary.countries.length > 0
+                  && <SummaryChart countries={this.state.store.summary.countries} />}
+                {/** Other charts */}
+              </div>
+            </div>)
+            : <DataNotFound />
+          : <AppLoading />
         }
 
       </div>
