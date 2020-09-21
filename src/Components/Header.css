@@ -1,11 +1,21 @@
-.header_title.MuiTypography-h5{
-    flex-grow: 1;
+.header_title.MuiTypography-h5 {
+    flex-grow  : 1;
     align-items: center;
-    text-align: center;
+    text-align : center;
     font-weight: 300;
-    font-size: 30px;
+    font-size  : 30px;
+    display    : flex;
 }
 
-.header > .MuiAppBar-colorPrimary{
+.header>.MuiAppBar-colorPrimary {
     background-color: #3d4977;
+}
+
+.header_left {
+    flex: 0.5;
+}
+
+.header_right {
+    flex: 0.5;
+    text-align: right;
 }

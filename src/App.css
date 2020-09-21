@@ -15,10 +15,17 @@
  }
 
  .confirm_cases {
-    background-image: linear-gradient(0deg,#1e3c72 0,#1e3c72 1%,#2a5298)!important;
+     background-image: linear-gradient(0deg, #1e3c72 0, #1e3c72 1%, #2a5298) !important;
  }
 
  .app_banner_cards {
      justify-content: center;
      display        : flex;
+ }
+
+ /* Mobile Screen Layout */
+ @media only screen and (max-width: 900px) {
+     .mobile-hidden {
+         display: none;
+     }
  }

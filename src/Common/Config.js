@@ -1,0 +1,1 @@
+export const WebAppUrl = "https://rss-covid19.web.app/";
