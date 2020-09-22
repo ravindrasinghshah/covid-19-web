@@ -33,19 +33,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         bottom: theme.spacing(2),
         right: theme.spacing(3),
-    },
-    // fab: {
-    //     margin: theme.spacing.unit, // You might not need this now
-    //     position: "fixed",
-    //     bottom: theme.spacing.unit * 2,
-    //     right: theme.spacing.unit * 3
-    // }
+    }
 }));
 
 function AppShare() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    const [hidden, setHidden] = React.useState(false);
 
     const handleOpen = () => {
         setOpen(true);
@@ -59,7 +52,6 @@ function AppShare() {
             <SpeedDial
                 ariaLabel="App Share"
                 className={classes.speedDial}
-                hidden={hidden}
                 icon={<ShareIcon />}
                 onClose={handleClose}
                 onOpen={handleOpen}
