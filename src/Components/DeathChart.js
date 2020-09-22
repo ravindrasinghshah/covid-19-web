@@ -26,7 +26,7 @@ function DeathChart({ countries }) {
                     .map(country => ({
                         x: country.CountryCode, y: country.TotalDeaths,
                         c: country.Country
-                    })).reverse().slice(0, 4).reverse()
+                    })).reverse().slice(0, 9).reverse()
             }
         ],
         []
@@ -60,10 +60,10 @@ function DeathChart({ countries }) {
         <div className="deathChart">
               <div className={classes.root}>
                 <Paper>
-                    <h5>Top 5 Countries Death Cases</h5>
+                    <h5>Top 10 Countries Death Cases</h5>
                     <div
                         style={{
-                            width: '250px',
+                            width: '300px',
                             height: '200px'
                         }}
                     >  {countries &&

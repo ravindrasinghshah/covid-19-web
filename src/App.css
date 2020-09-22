@@ -34,4 +34,9 @@
      .mobile-hidden {
          display: none;
      }
+
+     .app_banner_cards,
+     .app_summary_charts {
+         flex-flow: row wrap;
+     }
  }

@@ -11,6 +11,7 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { covidService } from './Services/Service';
 import Header from './Components/Header';
 import AppLoading from './Components/AppLoading';
+import RecoveredChart from './Components/RecoveredChart';
 
 class App extends React.Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class App extends React.Component {
                   this.state.store.summary.countries.length > 0
                   && <>
                     <SummaryChart countries={this.state.store.summary.countries} />
+                    <RecoveredChart countries={this.state.store.summary.countries} />
                     <DeathChart countries={this.state.store.summary.countries} />
                   </>
                 }

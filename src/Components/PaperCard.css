@@ -44,10 +44,3 @@ margin-right: 5px;
     font-weight    : 200;
     width          : auto;
 }
-
-@media only screen and (max-width: 900px) {
-    .app_banner_cards {
-        flex-flow: row wrap;
-    }
-    
-}

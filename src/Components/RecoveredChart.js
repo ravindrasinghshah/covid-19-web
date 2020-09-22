@@ -1,9 +1,8 @@
-import React from 'react';
-import './SummaryChart.css';
+import React from 'react'
+import './RecoveredChart.css';
 import { Chart } from 'react-charts';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -16,15 +15,16 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-function SummaryChart({ countries }) {
+
+function RecoveredChart({ countries }) {
     const classes = useStyles();
     const data = React.useMemo(
         () => [
             {
-                label: 'Total Confirmed',
-                data: countries.sort(({ TotalConfirmed: previousID }, { TotalConfirmed: currentID }) => previousID - currentID)
+                label: 'Total Recovered',
+                data: countries.sort(({ TotalRecovered: previousID }, { TotalRecovered: currentID }) => previousID - currentID)
                     .map(country => ({
-                        x: country.CountryCode, y: country.TotalConfirmed,
+                        x: country.CountryCode, y: country.TotalRecovered,
                         c: country.Country
                     })).reverse().slice(0, 9).reverse()
             }
@@ -47,21 +47,20 @@ function SummaryChart({ countries }) {
     const tooltip = React.useMemo(
         () => ({
             render: ({ datum, primaryAxis, getStyle }) => {
-                return (<div className="summary_chart_tooltip">
+                return (<div className="recoveredChart_tooltip">
                     <h3>{datum?.originalDatum?.c}</h3>
                     <br />
-                    <h4>Total Confirmed:  <strong>{datum?.originalDatum?.y}</strong></h4>
+                    <h4>Total Recovered:  <strong>{datum?.originalDatum?.y}</strong></h4>
                 </div>)
             }
         }),
         []
     )
-
     return (
-        <div className="summaryChart">
+        <div className="recoveredChart">
             <div className={classes.root}>
                 <Paper>
-                    <h5>Top 10 Countries Confirmed Cases</h5>
+                    <h5>Top 10 Countries Recovered Cases</h5>
                     <div
                         style={{
                             width: '300px',
@@ -69,7 +68,7 @@ function SummaryChart({ countries }) {
                         }}
                     >  {countries &&
                         <Chart data={data} series={series} axes={axes}
-                        className="confirmedChart_custom"
+                            className="recoveredChart_custom"
                             tooltip={tooltip}
                             primaryCursor
                             secondaryCursor
@@ -81,4 +80,4 @@ function SummaryChart({ countries }) {
     )
 }
 
-export default SummaryChart
+export default RecoveredChart

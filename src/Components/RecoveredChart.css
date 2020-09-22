@@ -1,0 +1,22 @@
+.recoveredChart {
+    justify-content: center;
+}
+
+.MuiPaper-root>h5 {
+    text-align    : center;
+    font-weight   : 300;
+    padding-bottom: 15px;
+}
+
+.recoveredChart_tooltip {
+    margin: 10px;
+}
+
+.recoveredChart_custom>svg>g>g.Series>g>path {
+    stroke: #139013 !important;
+}
+
+.recoveredChart_custom>svg>g>g.Series>g>circle {
+    stroke: #139013 !important;
+    fill  : #139013 !important;
+}
