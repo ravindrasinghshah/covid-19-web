@@ -1,0 +1,22 @@
+.deathChart {
+    justify-content: center;
+}
+
+.MuiPaper-root>h5 {
+    text-align    : center;
+    font-weight   : 300;
+    padding-bottom: 15px;
+}
+
+.deathChart_tooltip {
+    margin: 10px;
+}
+
+.deathChart_custom>svg>g>g.Series>g>path {
+    stroke: #f83245 !important;
+}
+
+.deathChart_custom>svg>g>g.Series>g>circle {
+    stroke: #f83245 !important;
+    fill  : #f83245 !important;
+}

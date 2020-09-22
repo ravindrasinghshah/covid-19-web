@@ -18,3 +18,13 @@
 {
     margin:10px;
 }
+
+
+.confirmedChart_custom>svg>g>g.Series>g>path {
+    stroke: #1e3c72 !important;
+}
+
+.confirmedChart_custom>svg>g>g.Series>g>circle {
+    stroke: #1e3c72 !important;
+    fill  : #1e3c72 !important;
+}

@@ -23,6 +23,12 @@
      display        : flex;
  }
 
+ .app_summary_charts {
+     display        : flex;
+     justify-content: center;
+     align-items    : center;
+ }
+
  /* Mobile Screen Layout */
  @media only screen and (max-width: 900px) {
      .mobile-hidden {

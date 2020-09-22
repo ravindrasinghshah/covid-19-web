@@ -3,6 +3,7 @@ import './App.css';
 import PaperCard from './Components/PaperCard';
 import NewCasesCard from './Components/NewCasesCard';
 import SummaryChart from './Components/SummaryChart';
+import DeathChart from './Components/DeathChart';
 import DataNotFound from './Components/DataNotFound';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
@@ -63,10 +64,14 @@ class App extends React.Component {
                   recoveredCount={this.state.store.summary.global.NewRecovered}
                   deathCount={this.state.store.summary.global.NewDeaths} />
               </div>
-              <div className="app_summary_chart">
+              <div className="app_summary_charts">
                 {this.state.store.summary.countries &&
                   this.state.store.summary.countries.length > 0
-                  && <SummaryChart countries={this.state.store.summary.countries} />}
+                  && <>
+                    <SummaryChart countries={this.state.store.summary.countries} />
+                    <DeathChart countries={this.state.store.summary.countries} />
+                  </>
+                }
                 {/** Other charts */}
               </div>
             </div>)

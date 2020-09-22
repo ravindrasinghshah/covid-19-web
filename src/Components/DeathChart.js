@@ -1,5 +1,5 @@
 import React from 'react';
-import './SummaryChart.css';
+import './DeathChart.css';
 import { Chart } from 'react-charts';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,15 +16,15 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-function SummaryChart({ countries }) {
+function DeathChart({ countries }) {
     const classes = useStyles();
     const data = React.useMemo(
         () => [
             {
-                label: 'Total Confirmed',
-                data: countries.sort(({ TotalConfirmed: previousID }, { TotalConfirmed: currentID }) => previousID - currentID)
+                label: 'Total Deaths',
+                data: countries.sort(({ TotalDeaths: previousID }, { TotalDeaths: currentID }) => previousID - currentID)
                     .map(country => ({
-                        x: country.CountryCode, y: country.TotalConfirmed,
+                        x: country.CountryCode, y: country.TotalDeaths,
                         c: country.Country
                     })).reverse().slice(0, 4).reverse()
             }
@@ -47,7 +47,7 @@ function SummaryChart({ countries }) {
     const tooltip = React.useMemo(
         () => ({
             render: ({ datum, primaryAxis, getStyle }) => {
-                return (<div className="summary_chart_tooltip">
+                return (<div className="deathChart_tooltip">
                     <h3>{datum?.originalDatum?.c}</h3>
                     <br />
                     <h4>Total Confirmed:  <strong>{datum?.originalDatum?.y}</strong></h4>
@@ -56,12 +56,11 @@ function SummaryChart({ countries }) {
         }),
         []
     )
-
     return (
-        <div className="summaryChart">
-            <div className={classes.root}>
+        <div className="deathChart">
+              <div className={classes.root}>
                 <Paper>
-                    <h5>Top 5 Countries Confirmed Cases</h5>
+                    <h5>Top 5 Countries Death Cases</h5>
                     <div
                         style={{
                             width: '250px',
@@ -69,7 +68,7 @@ function SummaryChart({ countries }) {
                         }}
                     >  {countries &&
                         <Chart data={data} series={series} axes={axes}
-                        className="confirmedChart_custom"
+                        className="deathChart_custom"
                             tooltip={tooltip}
                             primaryCursor
                             secondaryCursor
@@ -81,4 +80,4 @@ function SummaryChart({ countries }) {
     )
 }
 
-export default SummaryChart
+export default DeathChart
