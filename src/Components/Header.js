@@ -12,7 +12,7 @@ function Header() {
                 <Toolbar>
                     <div className="header_left">
                         <Typography variant="h6" className='header_title'>
-                            COVID-19 Dashboard
+                            COVID-19 STATS
                     </Typography>
                     </div>
                     <div className="header_right mobile-hidden">

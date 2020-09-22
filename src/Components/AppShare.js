@@ -34,12 +34,12 @@ const useStyles = makeStyles((theme) => ({
         bottom: theme.spacing(2),
         right: theme.spacing(3),
     },
-    fab: {
-        margin: theme.spacing.unit, // You might not need this now
-        position: "fixed",
-        bottom: theme.spacing.unit * 2,
-        right: theme.spacing.unit * 3
-    }
+    // fab: {
+    //     margin: theme.spacing.unit, // You might not need this now
+    //     position: "fixed",
+    //     bottom: theme.spacing.unit * 2,
+    //     right: theme.spacing.unit * 3
+    // }
 }));
 
 function AppShare() {
@@ -103,7 +103,7 @@ function AppShare() {
                     icon={<WhatsappShareButton
                         url={WebAppUrl}
                         title={AppShareTitle}
-                        separator=":: "
+                        separator=" "
                     >
                         <WhatsappIcon size={48} round />
                     </WhatsappShareButton>}
@@ -124,8 +124,8 @@ function AppShare() {
                     key="Email"
                     icon={<EmailShareButton
                         url={WebAppUrl}
-                        subject={AppShareTitle}
-                        body="Share app"
+                        body={AppShareTitle}
+                        subject="Covid 19 Stats App"
                     >
                         <EmailIcon size={48} round />
                     </EmailShareButton>}

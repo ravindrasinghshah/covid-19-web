@@ -50,7 +50,7 @@ function RecoveredChart({ countries }) {
                 return (<div className="recoveredChart_tooltip">
                     <h3>{datum?.originalDatum?.c}</h3>
                     <br />
-                    <h4>Total Recovered:  <strong>{datum?.originalDatum?.y}</strong></h4>
+                    <h4>Total Recovered:  <strong>{datum?.originalDatum?.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong></h4>
                 </div>)
             }
         }),
