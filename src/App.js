@@ -12,7 +12,7 @@ import { covidService } from './Services/Service';
 import Header from './Components/Header';
 import AppLoading from './Components/AppLoading';
 import RecoveredChart from './Components/RecoveredChart';
-
+import AppShare from './Components/AppShare';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +49,7 @@ class App extends React.Component {
         <Header />
         {this.state.isLoaded ?
           this.state.store.summary.global.TotalConfirmed > 0 ?
-            (<div className="app_banner">
+            (<><div className="app_banner">
               <div className="app_banner_cards">
                 <PaperCard title="Confirmed" count={this.state.store.summary.global.TotalConfirmed}
                   Icon={SentimentDissatisfiedIcon} paperClass="confirm_cases" />
@@ -76,7 +76,10 @@ class App extends React.Component {
                 }
                 {/** Other charts */}
               </div>
-            </div>)
+
+            </div>
+              <AppShare />
+            </>)
             : <DataNotFound />
           : <AppLoading />
         }
