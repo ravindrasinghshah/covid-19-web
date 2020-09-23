@@ -13,13 +13,13 @@ import Header from './Components/Header';
 import AppLoading from './Components/AppLoading';
 import RecoveredChart from './Components/RecoveredChart';
 import AppShare from './Components/AppShare';
+import WorldChart from './Components/WorldChart';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
       isLoaded: false,
-      items: [],
       store: {
         summary: {
           global: [],
@@ -77,6 +77,9 @@ class App extends React.Component {
                 {/** Other charts */}
               </div>
 
+              <div className="app_world_chart">
+                <WorldChart countries={this.state.store.summary.countries} />
+              </div>
             </div>
               <AppShare />
             </>)
