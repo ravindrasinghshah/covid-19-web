@@ -15,7 +15,10 @@
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "react-share": "^4.3.0"
+    "react-share": "^4.3.0",
+    "react-simple-maps": "^2.1.2",
+    "react-tooltip": "^4.2.10",
+    "react-world-countries-map": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
   }
 }

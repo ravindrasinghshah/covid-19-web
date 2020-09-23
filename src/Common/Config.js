@@ -1,2 +1,2 @@
 export const WebAppUrl = "https://rss-covid19.web.app/";
-export const AppShareTitle = "Coronavirus is the biggest health crisis we are facing today globally and continues to dominate our news feeds. We understand it can be overwhelming to keep up with the latest information. Here is a simple dashboard that will help you stay informed and stay safe: ";
+export const AppShareTitle = "Coronavirus is the biggest health crisis we are facing today globally and continues to dominate our news feeds. We understand it can be overwhelming to keep up with the latest information. Here is a simple app that will help you stay informed and stay safe: ";

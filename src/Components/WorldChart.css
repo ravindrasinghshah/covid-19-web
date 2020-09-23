@@ -1,0 +1,74 @@
+.worldChart {
+    display        : flex;
+    justify-content: center;
+    padding-top    : 20px;
+    padding-bottom : 30px;
+}
+
+.worldChart_map>h1 {
+    text-align : center;
+    font-size  : 40px;
+    font-weight: 400;
+}
+
+.worldChart_map {
+    width          : 76%;
+    display        : flex;
+    justify-content: flex-start;
+}
+
+.worldChart_map_tooltip {
+    font-size: 15px;
+    width    : 220px;
+}
+
+.worldChart_map_tooltip>h4 {
+    padding-bottom: 5px;
+}
+
+.worldChart_map_tooltip>p {
+    display: flex;
+}
+
+.worldChart_map_tooltip>p>span:first-child {
+    flex           : 0.6;
+    margin-right   : 2px;
+    justify-content: flex-start;
+}
+
+.worldChart_map_tooltip>p>span:last-child {
+    flex           : 0.4;
+    justify-content: flex-end;
+}
+
+.worldChart_map>.timeline {
+    flex         : 0.4;
+    align-content: flex-start;
+}
+
+.worldChart_map>.map {
+    flex-direction: row;
+    flex          : 0.6;
+    align-items   : flex-end;
+    border        : 1px solid #ccc;
+    border-radius : 5px;
+}
+
+.timeline .MuiTimelineItem-missingOppositeContent {
+    padding-left: 20px;
+}
+
+.timeline .MuiTimelineItem-missingOppositeContent:before {
+    content: none;
+}
+
+.timeline .MuiTimelineContent-root {
+    padding-top: 15px;
+}
+
+/* Mobile Screen Layout */
+@media only screen and (max-width: 900px) {
+    .worldChart_map>.map {
+        flex: 1;
+    }
+}
