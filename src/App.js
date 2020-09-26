@@ -61,6 +61,9 @@ class App extends React.Component {
         this.setStore(data);
       }
     }
+    else {
+      this.getData();
+    }
 
   }
   render() {

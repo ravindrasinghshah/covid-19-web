@@ -31,7 +31,7 @@ function Info() {
         <div style={modalStyle} className="info_modal">
             <h2>App Info</h2>
             <p>
-                Note: Data is pulled from Covid19 API : <a href="" target="_blank">https://covid19api.com/</a>
+                Note: Data is pulled from Covid19 API : <a href="https://covid19api.com/" target="_blank">https://covid19api.com/</a>
             </p>
             <p>A free API for data on the Coronavirus</p>
         </div>
