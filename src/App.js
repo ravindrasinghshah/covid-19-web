@@ -41,6 +41,7 @@ class App extends React.Component {
   }
   getData() {
     covidService.getGlobalResult().then(response => {
+      this.setState({ isLoaded: true });
       if (response.Date !== "0001-01-01T00:00:00Z") {
         localStorage.setItem("covidapp-data", JSON.stringify(response));
         this.setStore(response);
