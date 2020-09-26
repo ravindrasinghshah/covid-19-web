@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import AppQRCode from './AppQRCode';
+import Info from './Info';
 
 function Header() {
     return (
@@ -15,8 +16,13 @@ function Header() {
                             COVID-19 STATS
                     </Typography>
                     </div>
-                    <div className="header_right mobile-hidden">
-                        <AppQRCode />
+                    <div className="header_right">
+                        <div className="header_right_info">
+                            <Info/>
+                        </div>
+                        <div className="mobile-hidden">
+                            <AppQRCode />
+                        </div>
                     </div>
                 </Toolbar>
             </AppBar>

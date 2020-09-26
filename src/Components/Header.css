@@ -18,4 +18,6 @@
 .header_right {
     flex: 0.5;
     text-align: right;
+    display:flex;
+    justify-content: flex-end;
 }

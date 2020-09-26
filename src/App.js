@@ -28,20 +28,40 @@ class App extends React.Component {
       }
     };
   }
-
-  componentDidMount() {
-    covidService.getGlobalResult().then(response => {
-      // console.log(response)
-      this.setState({
-        isLoaded: true,
-        store: {
-          summary: {
-            global: response.Global,
-            countries: response.Countries
-          }
+  setStore(response) {
+    this.setState({
+      isLoaded: true,
+      store: {
+        summary: {
+          global: response.Global,
+          countries: response.Countries
         }
-      });
+      }
     });
+  }
+  getData() {
+    covidService.getGlobalResult().then(response => {
+      if (response.Date !== "0001-01-01T00:00:00Z") {
+        localStorage.setItem("covidapp-data", JSON.stringify(response));
+        this.setStore(response);
+      }
+    });
+  }
+  componentDidMount() {
+    var localData = localStorage.getItem("covidapp-data");
+    if (localData != null) {
+      var data = JSON.parse(localData);
+      var date1 = new Date(data.Date);
+      var date2 = new Date();
+      if (new Date(date1.getFullYear(), date1.getMonth(), date1.getDay()).getTime()
+        < new Date(date2.getFullYear(), date2.getMonth(), date2.getDay()).getTime()) {
+        this.getData();
+      }
+      else {
+        this.setStore(data);
+      }
+    }
+
   }
   render() {
     return (
